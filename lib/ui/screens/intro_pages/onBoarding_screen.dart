@@ -25,14 +25,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             controller: _pageController,
             onPageChanged: (index) {
               setState(() {
-                onLastPage = (index == 3);
+                onLastPage = (index == 2);
               });
             },
             children: [
-              OnBoarding(color: Colors.white, texto: null, child: Image.asset('assets/page1.png')),
-              const OnBoarding(color: Colors.yellowAccent, texto: null),
-              const OnBoarding(color: Colors.green, texto: null),
-              const OnBoarding(color: Colors.orange, texto: null),
+              OnBoarding(color: Colors.white, texto: 'Podrás utilizar una variedad de herramientas.', child: Image.asset('assets/onBoarding0.png', height: 300, width: 300.0)),
+              OnBoarding(color: Colors.yellowAccent, texto:'Haz todas las notas que creas necesarias.', child: Image.asset('assets/onBoarding1.png', height: 300, width: 300.0)),
+              OnBoarding(color: Colors.green,texto: 'Desarrolla proyectos de una forma ordenada y junto a tus compañeros.', child: Image.asset('assets/onBoarding2.png', height: 300, width: 300.0)),
             ],
           ),
           Container(
@@ -42,14 +41,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    _pageController.jumpToPage(3);
+                    _pageController.jumpToPage(2);
                   },
                   child: const Text('Omitir')
                 ),
 
                 SmoothPageIndicator(
                   controller: _pageController, 
-                  count: 4,
+                  count: 3,
                   effect: const SlideEffect(
                     dotColor: Colors.grey,
                     dotHeight: 15,
